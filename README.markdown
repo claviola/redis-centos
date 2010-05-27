@@ -2,8 +2,16 @@
 
 Perform the following on a build box as root.
 
-## Create an RPM Build Environment
+## Enable the EPEL repositories
 
+    yum install yum-priorities
+    rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-3.noarch.rpm
+    
+    Follow the guide at http://wiki.centos.org/PackageManagement/Yum/Priorities
+    to set the standard CentOS repositories at a higher priority than the EPEL
+    ones to avoid conflicts.
+
+## Create an RPM Build Environment
     yum install rpmdevtools
     rpmdev-setuptree
 

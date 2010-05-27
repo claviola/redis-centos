@@ -1,6 +1,6 @@
 Summary: redis
 Name: redis
-Version: 1.3.9
+Version: 2.0.0.rc1
 Release: 1
 License: BSD
 Group: Applications/Multimedia
@@ -187,6 +187,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/log/redis
 
 %changelog
+* Thu May 27 2010 - Carlos Laviola <carlos.laviola@corp.globo.com> 2.0.0.rc1
+- redis updated to version 2.0.0-rc1 (development release form GitHub)
+
 * Wed May 05 2010 - brad at causes dot com 1.3.9-1
 - redis updated to version 1.3.9 (development release from GitHub)
 - extract config file from spec file

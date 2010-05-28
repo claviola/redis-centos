@@ -22,11 +22,11 @@ Perform the following on a build box as root.
 ## Download Redis
 
     cd /tmp
-    wget http://github.com/antirez/redis/tarball/v1.3.9
-    tar -xzf antirez-redis-v1.3.9-0-gd4dd655.tar.gz
-    mv antirez-redis-d495a77 redis-1.3.9
-    tar -czf redis-1.3.9.tar.gz redis-1.3.9
-    cp redis-1.3.9.tar.gz ~/rpmbuild/SOURCES/
+    wget http://github.com/antirez/redis/tarball/v2.0.0-rc1
+    tar xzf antirez-redis-v2.0.0-rc1-0-g329cdba.tar.gz
+    mv antirez-redis-g329cdba redis-2.0.0-rc1
+    tar czf redis-2.0.0-rc1.tar.gz redis-2.0.0-rc1
+    cp redis-2.0.0-rc1.tar.gz ~/rpmbuild/SOURCES/
 
 ## Get Necessary System-specific Configs
 
@@ -41,7 +41,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-1.3.9-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.0.0.rc1-1.x86_64.rpm
 
 ## Credits
 

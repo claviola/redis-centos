@@ -1,6 +1,6 @@
 Summary: redis
 Name: redis
-Version: 2.0.0.rc1
+Version: 2.0.2
 Release: 1
 License: BSD
 Group: Applications/Multimedia
@@ -142,7 +142,7 @@ mkdir -p %{buildroot}%{_bindir}
 %{__install} -Dp -m 0755 redis-cli %{buildroot}%{_bindir}/redis-cli
 
 %{__install} -Dp -m 0755 redis.logrotate %{buildroot}%{_sysconfdir}/logrotate.d/redis
-%{__install} -Dp -m 0755 redis.sysv %{buildroot}%{_sysconfdir}/init.d/redis
+%{__install} -Dp -m 0755 redis.sysv %{buildroot}%{_sysconfdir}/rc.d/init.d/redis
 %{__install} -Dp -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/redis.conf
 %{__install} -p -d -m 0755 %{buildroot}%{_localstatedir}/lib/redis
 %{__install} -p -d -m 0755 %{buildroot}%{_localstatedir}/log/redis
@@ -180,13 +180,17 @@ fi
 %{_sbindir}/redis-server
 %{_bindir}/redis-benchmark
 %{_bindir}/redis-cli
-%{_sysconfdir}/init.d/redis
+%{_sysconfdir}/rc.d/init.d/redis
 %config(noreplace) %{_sysconfdir}/redis.conf
 %{_sysconfdir}/logrotate.d/redis
 %dir %attr(0770,redis,redis) %{_localstatedir}/lib/redis
 %dir %attr(0755,redis,redis) %{_localstatedir}/log/redis
 
 %changelog
+* Tue Oct 05 2010 - Sergio Rubio <rubiojr@frameos.org> 2.0.2-1
+- Updated to upstream 2.0.2
+- Replace references to /etc/init.d with /etc/rc.d/init.d
+
 * Thu May 27 2010 - Carlos Laviola <carlos.laviola@corp.globo.com> 2.0.0.rc1
 - redis updated to version 2.0.0-rc1 (development release form GitHub)
 
